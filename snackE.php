@@ -10,55 +10,51 @@
             "nome" => "Alessia",
             "cognome" => "Zang",
             "voti" => [
-                6,
-                5,
-                8,
-                8,
-                7
+                "storia" => 6,
+                "lettere" => 5,
+                "matematica" => 8,
+                "educazione fisica" => 8,
+                "diritto" => 7
                 ]
         ],
         [
             "nome" => "Giuseppe",
             "cognome" => "Verdi",
             "voti" => [
-                9,
-                7,
-                3,
-                6,
-                4
+                "storia" => 9,
+                "lettere" => 7,
+                "matematica" => 3,
+                "educazione fisica" => 6,
+                "diritto" => 4
                 ]
         ],
         [
             "nome" => "Annalisa",
             "cognome" => "Bianchi",
             "voti" => [
-                9,
-                8,
-                8,
-                7,
-                9
+                "storia" => 9,
+                "lettere" => 8,
+                "matematica" => 8,
+                "educazione fisica" => 7,
+                "diritto" => 9
                 ]
         ],
         [
             "nome" => "Antonio ",
             "cognome" => "Rossi",
             "voti" => [
-                8,
-                5,
-                7,
-                6,
-                6
+                "storia" => 8,
+                "lettere" => 5,
+                "matematica" => 7,
+                "educazione fisica" => 6,
+                "diritto" => 6
                 ]
         ]
     ];
 
     for ($i = 0; $i < count($studenti); $i++){
-        $sommaVoti = 0;
-        for ($num = 0; $num < count($studenti[$i]["voti"]); $num++){
-            $sommaVoti += $studenti[$i]["voti"][$num];
-        }
-
-        $votoMedio = $sommaVoti/count($studenti[$i]["voti"]);
+        
+        $votoMedio = array_sum($studenti[$i]["voti"]) / count($studenti[$i]["voti"]);
 
         echo "<ul>" . "<li>" . $studenti[$i]["nome"] . " " . $studenti[$i]["cognome"] . ":" . " " . $votoMedio . "</li>" . "</ul>";
     }
