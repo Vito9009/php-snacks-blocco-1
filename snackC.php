@@ -18,9 +18,15 @@
         while(count($numeriCasualiArray) < 15){
             $numeriCasuali = rand(0, 1000);
             if (!in_array($numeriCasuali, $numeriCasualiArray)){
-                echo $numeriCasualiArray[] .= $numeriCasuali . '<br>';
+                $numeriCasualiArray[] = $numeriCasuali . '<br>';
             }
         }
+
+        for ($i = 0; $i < count($numeriCasualiArray); $i++){
+            echo $numeriCasualiArray[$i] . "<br>";
+        }
+
+        // echo $numeriCasualiArray[] .= $numeriCasuali . '<br>'; (utilizzato nel while al possto della riga 21 e senza ciclo for)
     ?>
 </body>
 </html>
